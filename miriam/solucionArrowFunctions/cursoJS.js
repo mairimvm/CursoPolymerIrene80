@@ -1,14 +1,13 @@
-var funcs = [];
+let funcs = [];
 
-for (var i = 0; i < 10; i++) {
- funcs.push(i);
+for (let i = 0; i < 10; i++) {
+ funcs.push((function(value){
+     return function(){
+        console.log(value);
+      };
+   }(i)));
 }
 
-funcs.forEach(func => {
-   console.log(func);
+funcs.forEach(function(func) {
+   func();
 });
-
-
-//for(var i = 0; i < 10; i += 1) {
-//    console.log(i);
-//}
