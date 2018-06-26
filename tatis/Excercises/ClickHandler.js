@@ -9,9 +9,8 @@ function registerHandlers() {
       function(i){
         return function() {
           alert(i);
-          return false;
         }
-      }(i)
+      }
     )
   }
 }
