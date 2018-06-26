@@ -1,10 +1,14 @@
+
 function registerHandlers(){
   var as = document.getElementsByTagName('a');
-  for (i = as.length; i-- >= 0;) {
+  console.log(as[0].innerHTML);
+
+  for (var i = 0; i < as.length; i++) {
     as[i].onclick = (function(index) {
-      return function() {
-        alert(index);
-        return false;
-      }}(i));
-    }
+          alert(index);
+          return false;
+    })(i);
   }
+}
+
+registerHandlers();
