@@ -20,6 +20,21 @@ for (property in avengers) {
  console.log(property);
 }
 
+//FOR OF Y FOR IN
+const list_avengers = [{
+ name: 'Thor',
+ activity: 'Conquistar chicas'
+},{name: 'Hulk', activity: 'Destruir'}]
+for (let t of list_avengers) {
+  console.log('FOR OF------------');
+  console.log(t);
+  for (let p in t) {
+    console.log('FOR IN------------');
+    console.log('Nombre de la propiedad: '+p);
+    console.log('Valor: '+t[p]);
+  }
+}
+
 //for in
 const string = 'hello';
 
