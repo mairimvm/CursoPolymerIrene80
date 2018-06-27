@@ -4,11 +4,8 @@
 
 Archivos de ...
 
-| Plugin | README |
+| DIRECTORIO | DESCRIPCION |
 | ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| Github | [plugins/github/README.md][PlGh] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
-| OneDrive | [plugins/onedrive/README.md][PlOd] |
-| Medium | [plugins/medium/README.md][PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
+| SolucionArrowFunction | contiene dierentes formas de hacer la suma de dos numero  |
+| conversionDivisaClase | contiene la solucion al ejercicio de conversionde divisas  |
+| tareaEjercicio | contien  la solucion a los ejercicios que estaban en linea |
