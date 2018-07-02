@@ -1,0 +1,29 @@
+.contenedor {
+    width: 80%;
+    height: 100px;
+}
+
+#myProgress {
+    background-color: grey;
+}
+#myBar{
+  width: 1%;
+  height: 20px;
+}
+#myBar.success{
+    background-color: green;
+}
+
+#myBar.warning{
+    background-color: yellow;
+}
+
+#myBar.danger{
+    background-color: red;
+}
+
+#type {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
