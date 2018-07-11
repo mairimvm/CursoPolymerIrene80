@@ -9,6 +9,9 @@ A continuación se muestra una tabla con las carpetas que contiene el proyecto, 
 | solucionArrowFunctions | archivos sobre sesion de arrow functions |
 | tareaEjercicios | archivos con los ejercicios resueltos (links de internet) |
 | solucionPromesas | archivos relacionados con el ejercicio de promesas (lista de música) |
+| footerPolymer2 | práctica de polymer de footer element. |
+| practPolymerPiedraPapelTijera | juego del piedra, papel o tijera. |
+| progressBar | práctica de polymer de una progress bar. |
 
 
 ## solucionArrowFunctions
