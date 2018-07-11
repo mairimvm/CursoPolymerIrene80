@@ -1,0 +1,98 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="footer-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+        height: 300px;
+      }
+      #contenedorImagenes{
+        display: flex;
+        justify-content: space-around;
+        /* height: -webkit-fill-available; */
+      }
+      #img1,#img2,#img3{
+        height: 300px;
+      }
+      .img1{
+        width: 100%;
+        height: 100%;
+        background: transparent url(../../img/camara_vintage.jpg) no-repeat 50% 50% !important;
+      }
+      .img2{
+        width: 100%;
+        height: 100%;
+        background: transparent url(../../img/paris_vintage.jpg) no-repeat 50% 50% !important;
+      }
+      .img3{
+        width: 100%;
+        height: 100%;
+        background: transparent url(../../img/taza_vintage.jpg) no-repeat 50% 50% !important;
+      }
+      #autor{
+        margin-top: 10%;
+        font-weight: 700;
+      }
+      @media( max-width: 815px){
+        #contenedorImagenes{
+          flex-direction: column;
+        }
+        #img2,#img3{
+          margin-top: 7%;
+        }
+        .demo{
+          height: 1150px;
+        }
+      }
+      @media( max-width: 576px){
+        #img2,#img3{
+          margin-top: 10%;
+        }
+      }
+    </style>
+    <h2>Oración a la ciencia ...</h2>
+
+    <div id="contenedorImagenes">
+    <div id="img1">
+      <div class="img1"></div>
+        <p>Ojalá nuestra tecnología nunca deje atrás nuestra filosofía.</p>
+    </div>
+    <div id="img2">
+      <div class="img2"></div>
+      <p>Ojalá nuestro poder nunca supere nuestra compasión.</p>
+    </div>
+    <div id="img3">
+      <div class="img3"></div>
+      <p>Y que el motor de cambio no sea el miedo, sino el amor.</p>
+    </div>
+    </div>
+
+    <div id="autor"><p>Dan Brown - Inferno</p></div>
+  </template>
+
+
+  <script>
+    /**
+     * `footer-element`
+     *
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class FooterElement extends Polymer.Element {
+      static get is() { return 'footer-element'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'footer-element'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(FooterElement.is, FooterElement);
+  </script>
+</dom-module>

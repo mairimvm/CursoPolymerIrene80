@@ -1,0 +1,6 @@
+{
+  "name": "opcion-contest",
+  "short_name": "opcion-contest",
+  "start_url": "/",
+  "display": "standalone"
+}

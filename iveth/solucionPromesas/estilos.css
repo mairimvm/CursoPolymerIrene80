@@ -2,6 +2,7 @@ table, th, td {
     border: 1px solid gray;
     font-family: monospace;
     font-size: 16px;
+    color: darkblue;
 }
 
 h3{

@@ -1,0 +1,74 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
+
+<link rel="import" href="../juego/opcion-contest.html">
+
+<dom-module id="ganador-contest">
+  <template>
+    <style>
+    :host {
+      display: block;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+    </style>
+    <h2>Juega Piedra, Papel o Tijera!!!</h2>
+
+    <template is="dom-repeat" items="[[opciones]]" as="opcion">
+      <opcion-contest
+      id="opcion[[index]]"
+      respuesta="[[opcion]]"
+      num="[[index]]"
+      on-marcada:"marcadaOpcion"
+      >
+      </opcion-contest>
+    </template>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class GanadorContest extends Polymer.Element {
+      static get is() {
+        return 'ganador-contest';
+      }
+
+      static get properties() {
+        return {
+          opcion: String,
+          opciones: {
+            type: Array,
+            value: function(){
+              return ['Piedra', 'Papel', 'Tijera']
+            }
+          }
+        };
+      }
+
+      marcadaOpcion(e) {
+        console.log('han marcado una opción', e);
+        for(let i=0; i<this.respuestas.length; i++) {
+          if(e.detail.id != i) {
+            console.log('esta opcion no está marcada', i)
+            this.shadowRoot.querySelector('#opcion' + i).marcada = false;
+          }
+        }
+      }
+
+      aleatorio (e){
+        this.num = Math.floor((Math.random()*3)+1);
+        var selectMaquina;
+
+        if(this.num == 0){
+          select = this.opciones;
+
+        }
+        console.log(selectMaquina);
+        console.log(select);
+      }
+    } //fin de la clase GanadorContest
+
+    window.customElements.define(GanadorContest.is, GanadorContest);
+  </script>
+</dom-module>
