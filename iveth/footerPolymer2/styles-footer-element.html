@@ -1,0 +1,37 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/font-roboto/roboto.html">
+
+<dom-module id="demo-styles-page-footer">
+  <template>
+    <style>
+    body{
+      font-family: 'Roboto', 'Noto', sans-serif;
+      font-size: 16px;
+      margin: 0;
+      padding: 20px;
+      background-color: #fafafa;
+      font-style: italic;
+    }
+    .horizontal-section-container {
+      @apply --layout-horizontal;
+      @apply --layout-center-justified;
+      @apply --layout-wrap;
+    }
+
+    .vertical-section-container {
+      @apply --layout-vertical;
+      @apply --center-justified;
+    }
+    
+    demo-snippet.centered-demo {
+      --demo-snippet-demo: {
+        @apply --layout-horizontal;
+        @apply --layout-wrap;
+        @apply --layout-center-justified;
+      };
+    }
+
+    </style>
+  </template>
+</dom-module>
