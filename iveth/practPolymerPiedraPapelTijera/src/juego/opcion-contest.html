@@ -1,0 +1,139 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">
+
+
+<dom-module id="opcion-contest">
+  <template>
+    <style>
+    :host {
+     display: block;
+     margin: 15px;
+     border-bottom: 1px solid gray;
+   }
+   [hidden] {
+     display: none;
+   }
+   span {
+     display: inline-block;
+     position: relative;
+     top: 1px;
+   }
+   .marcada {
+     color: #295;
+   }
+   .desmarcada {
+     color: #999;
+   }
+    </style>
+    <p on-click="comparacion" class$="[[clase]]">
+          <iron-icon icon="[[icono]]"></iron-icon>
+          <span>[[respuesta]]</span>
+    </p>
+  </template>
+
+  <script>
+    let numero = 0;
+
+    class OpcionContest extends Polymer.Element {
+      static get is() {
+        return 'opcion-contest';
+      }
+
+      static get properties() {
+        return {
+          respuesta: String,
+          marcada: {
+            type: Boolean,
+            value: false,
+            reflectToAttribute: true
+          },
+          num: Number,
+          icono: {
+            type: String,
+            computed: '_calcularIcono(marcada)'
+          },
+          clase: {
+            type: String,
+            computed: '_calcularClase(marcada)'
+          }
+        };
+      }
+
+      _calcularIcono(m){
+        if(m){
+          return 'icons:check-box';
+        }
+        return 'icons:check-box-outline-blank';
+      }
+
+      _calcularClase(m){
+          if(m){
+            return 'marcada';
+          }
+          return 'desmarcada';
+      }
+
+      comparacion (e){
+        this.marcada = !this.marcada;
+        this.dispatchEvent(new CustomEvent('marcada', {
+           detail: {
+             id: this.num
+           },
+           bubbles: true,
+           composed: true
+         }));
+
+      var selectMaquina = Math.floor((Math.random()*3)+1);
+      var selectUsuario = this.num;
+
+      var opcionMaquina;
+      var opcionUsuario;
+
+        if(selectMaquina == 1){
+          opcionMaquina = "Piedra";
+        }else if(selectMaquina == 2){
+          opcionMaquina = "Papel"
+        }else {
+          opcionMaquina = "Tijera"
+        }
+
+        if(this.num == 0){
+          opcionUsuario = "Piedra";
+        }else if (this.num == 1) {
+          opcionUsuario = "Papel";
+        }else{
+          opcionUsuario = "Tijera";
+        }
+
+        if(opcionUsuario == opcionMaquina){
+          alert("Empataron!, los dos eligieron: " + '' +opcionUsuario);
+        }else {
+          if (opcionUsuario == "Piedra" && opcionMaquina == "Papel"){
+            alert(opcionUsuario+" vs "+opcionMaquina+", gana la Máquina!.");
+          }
+          if(opcionUsuario == "Piedra" && opcionMaquina == "Tijera"){
+            alert(opcionUsuario+" vs "+opcionMaquina+", gana el Usuario!.");
+          }
+          if(opcionUsuario == "Papel" && opcionMaquina == "Tijera"){
+            alert(opcionUsuario+" vs "+opcionMaquina+", gana la Máquina!.");
+          }
+          if(opcionUsuario == "Papel" && opcionMaquina == "Piedra"){
+            alert(opcionUsuario+" vs "+opcionMaquina+", gana el Usuario!.");
+          }
+          if(opcionUsuario == "Tijera" && opcionMaquina == "Piedra"){
+            alert(opcionUsuario+" vs "+opcionMaquina+", gana la Máquina!.");
+          }
+          if(opcionUsuario == "Tijera" && opcionMaquina == "Papel"){
+            alert(opcionUsuario+" vs "+opcionMaquina+", gana el Usuario!.");
+          }
+        }
+
+        console.log('la maquina eligio: ', selectMaquina, opcionMaquina);
+        console.log('yo elegi: ', selectUsuario, opcionUsuario);
+
+      }
+    }
+
+    window.customElements.define(OpcionContest.is, OpcionContest);
+  </script>
+</dom-module>
